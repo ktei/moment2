@@ -1,0 +1,25 @@
+.header
+  - if signed_in?
+    %ul.nav.nav-pills.pull-right
+      %li
+        %a{href: '#'} Gallery
+      %li
+        %a{href: '#'} Library
+      %li.dropdown
+        %a.dropdown-toggle{href: '#', data: {toggle: 'dropdown'}}
+          User
+          %b.caret
+        %ul.dropdown-menu
+          %li
+            %a{href: '#'} Settings
+          %li
+            %a{href: '#'} Sign out
+    %h3.text-muted Moment
+  - else
+    %ul.nav.nav-pills.pull-right
+      %li
+        %a{href: '#'} Log in
+      %li
+        %a{href: '#'} Sign up
+    %h3.text-muted Moment
+

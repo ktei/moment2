@@ -1,0 +1,35 @@
+body {
+
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.container {
+  max-width: none !important;
+  width: 970px;
+  min-height: 800px;
+}
+
+.header {
+  border-bottom: 1px solid #e5e5e5;
+  h3 {
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 40px;
+    padding-bottom: 19px;
+  }
+}
+
+.jumbotron {
+  margin-top: 20px;
+}
+
+footer {
+  border-top: 1px solid #e5e5e5;
+  width: 940px;
+  padding-top: 15px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
