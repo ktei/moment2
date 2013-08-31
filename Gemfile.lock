@@ -35,6 +35,12 @@ GEM
       uuidtools (~> 2.1)
     bcrypt-ruby (3.1.2-x86-mingw32)
     builder (3.1.4)
+    capybara (2.1.0)
+      mime-types (>= 1.16)
+      nokogiri (>= 1.3.3)
+      rack (>= 1.0.0)
+      rack-test (>= 0.5.4)
+      xpath (~> 2.0)
     clearance (1.0.1)
       bcrypt-ruby
       email_validator (~> 1.4)
@@ -167,6 +173,8 @@ GEM
       rack (>= 1.0)
       rack-test (>= 0.5.3)
     will_paginate (3.0.4)
+    xpath (2.0.0)
+      nokogiri (~> 1.3)
 
 PLATFORMS
   x86-mingw32
@@ -174,6 +182,7 @@ PLATFORMS
 DEPENDENCIES
   annotate
   aws-sdk
+  capybara
   clearance
   coffee-rails (~> 4.0.0)
   factory_girl_rails
