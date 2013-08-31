@@ -1,0 +1,4 @@
+= form_for :session, :html => {:class => 'login'}, :url => session_path do |form|
+  %h2.heading Please log in here
+  = render 'sessions/form', :form => form
+  = form.submit 'Log in', :class => 'btn btn-lg btn-primary btn-block'

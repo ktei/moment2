@@ -1,0 +1,6 @@
+- if m.errors.any?
+  .alert.alert-warning
+    %string Oops, there were some problems...
+    %ul
+      - m.errors.full_messages.each do |msg|
+        %li= "#{msg}"

@@ -13,13 +13,13 @@
           %li
             %a{href: '#'} Settings
           %li
-            %a{href: '#'} Sign out
+            = link_to 'Sign out', sign_out_path, method: :delete
     %h3.text-muted Moment
   - else
     %ul.nav.nav-pills.pull-right
       %li
-        %a{href: '#'} Log in
+        = link_to 'Log in', sign_in_path
       %li
-        %a{href: '#'} Sign up
+        = link_to 'Sign up', sign_up_path
     %h3.text-muted Moment
 

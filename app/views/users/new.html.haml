@@ -1,0 +1,14 @@
+.row
+  .col-xs-2
+  .col-xs-8
+
+    = form_for @user, :html => {class: 'form-horizontal sign-up', role: 'form'} do |form|
+      %h2 Sign up for free
+      %hr
+      = render 'shared/model_errors', :m => @user
+      = render 'users/form', :form => form
+      .form-group
+        .col-lg-offset-2.col-xs-10
+          = form.submit 'Sign up', :class => 'btn btn-primary'
+          = link_to 'Cancel', root_path
+  .col-xs-2
