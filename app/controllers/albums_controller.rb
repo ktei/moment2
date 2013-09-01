@@ -1,6 +1,11 @@
 class AlbumsController < ApplicationController
   before_filter :authorize
 
+  def show
+    @album = Album.find(params[:id])
+    @title = "#{@album.caption}"
+  end
+
   def new
     @title = 'New album'
     @album = current_user.albums.build

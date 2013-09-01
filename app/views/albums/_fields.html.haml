@@ -1,0 +1,8 @@
+.form-group
+  = form.label :caption, :class => 'col-xs-2 control-label'
+  .col-xs-10
+    = form.text_field :caption, :class => 'form-control', :placeholder => 'Caption', :autofocus => ''
+.form-group
+  = form.label :description, :class => 'col-xs-2 control-label'
+  .col-xs-10
+    = form.text_area :description, :class => 'form-control', :placeholder => 'Description...', :rows => '5'

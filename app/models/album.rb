@@ -11,4 +11,8 @@ class Album < ActiveRecord::Base
   def cover
 
   end
+
+  def to_param
+    "#{id}-#{caption.parameterize}"
+  end
 end

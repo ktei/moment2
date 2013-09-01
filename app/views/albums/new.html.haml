@@ -1,6 +1,14 @@
-%h1 Library
+%h1 Library - create new album
 .row
   .col-xs-3
     = render 'shared/lib_nav'
   .col-xs-9
-    = render 'shared/model_errors', :m => @album
+    = form_for @album, :html => {class: 'form-horizontal bordered', role: 'form'} do |form|
+      %h2 New album
+      %hr
+      = render 'shared/model_errors', :m => @album
+      = render 'albums/fields', :form => form
+      .form-group
+        .col-lg-offset-2.col-xs-10
+          = form.submit 'Create', :class => 'btn btn-primary'
+          = cancel_submit_link_btn library_path
