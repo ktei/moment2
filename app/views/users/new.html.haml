@@ -2,7 +2,7 @@
   .col-xs-2
   .col-xs-8
 
-    = form_for @user, :html => {class: 'form-horizontal sign-up', role: 'form'} do |form|
+    = form_for @user, :html => {class: 'form-horizontal bordered', role: 'form'} do |form|
       %h2 Sign up for free
       %hr
       = render 'shared/model_errors', :m => @user
@@ -10,5 +10,5 @@
       .form-group
         .col-lg-offset-2.col-xs-10
           = form.submit 'Sign up', :class => 'btn btn-primary'
-          = link_to 'Cancel', root_path
+          = link_to 'Cancel', root_path, :class => 'btn btn-default'
   .col-xs-2

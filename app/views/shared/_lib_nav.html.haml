@@ -1,0 +1,10 @@
+%ul.nav.nav-pills.nav-stacked.side-bar
+  %li{class: "#{'active' if params[:controller] == 'albums' and params[:action] == 'index'}"}
+    = link_to 'Albums', library_path
+    %ul.nav
+      %li.active
+        %a{href: '#'} Screenshots
+  %li{class: "#{'active' if params[:controller] == 'albums' and params[:action] == 'new'}"}
+    = link_to 'Create album', new_album_path
+  %li
+    %a{href: '#'} Upload

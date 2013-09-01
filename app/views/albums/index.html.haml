@@ -1,0 +1,14 @@
+%h1 Library
+.row
+  .col-xs-3
+    = render 'shared/lib_nav'
+  .col-xs-9
+    - if current_user.albums.any?
+      - current_user.albums.each_with_index do |album, index|
+        - if index % 3 == 0
+          .row
+        .col-xs-4
+          = render 'albums/album', :album => album
+    - else
+      .alert.alert-info
+        There is no album found.

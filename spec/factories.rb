@@ -10,11 +10,15 @@ FactoryGirl.define do
     "user-#{n}@test.com"
   end
 
-  #factory :album do |album|
-  #  album.title "foobar"
-  #  album.description "foobar desc"
-  #  album.association :user
-  #end
+  factory :album do |album|
+    album.caption 'foobar'
+    album.description 'foobar desc'
+    album.association :user
+  end
+
+  sequence :caption do |n|
+    "album-caption#{n}"
+  end
   #
   #factory :photo do |photo|
   #  photo.description "foobar desc"

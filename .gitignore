@@ -18,3 +18,4 @@ pickle-email-*.html
 webrat.log
 /spec/fixtures/images
 /.idea
+/public/system

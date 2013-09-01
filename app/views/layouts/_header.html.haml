@@ -6,12 +6,12 @@
       %li
         %a{href: '#'} Library
       %li.dropdown
-        %a.dropdown-toggle{href: '#', data: {toggle: 'dropdown'}}
-          User
+        %a.dropdown-toggle{href: '#', data: {toggle: 'dropdown'}, class: 'user-links'}
+          = image_tag current_user.avatar.url(:thumb), :style => 'width:25px;'
           %b.caret
         %ul.dropdown-menu
           %li
-            %a{href: '#'} Settings
+            = link_to 'Edit profile', profile_path
           %li
             = link_to 'Sign out', sign_out_path, method: :delete
     %h3.text-muted Moment

@@ -1,0 +1,30 @@
+.row
+  .col-xs-2
+  .col-xs-8
+    = form_for current_user, :url => profile_path,
+                             :html => {class: 'form-horizontal bordered', role: 'form'} do |form|
+      %h2 Your profile
+      %hr
+      = render 'shared/model_errors', :m => current_user
+      .form-group
+        = form.label :email, :class => 'col-xs-3 control-label'
+        .col-xs-9
+          = form.text_field :email, :class => 'form-control', :placeholder => 'Email address', :autofocus => ''
+      .form-group
+        = form.label :first_name, :class => 'col-xs-3 control-label'
+        .col-xs-9
+          = form.text_field :first_name, :class => 'form-control', :placeholder => 'First name'
+      .form-group
+        = form.label :last_name, :class => 'col-xs-3 control-label'
+        .col-xs-9
+          = form.text_field :last_name, :class => 'form-control', :placeholder => 'Last name'
+      .form-group
+        = form.label :avatar, :class => 'col-xs-3 control-label'
+        .col-xs-9
+          = avatar_for(current_user, :profile)
+          = form.file_field :avatar, :style => 'margin-top:5px'
+      .form-group
+        .col-lg-offset-3.col-xs-9
+          = form.submit 'Save changes', :class => 'btn btn-primary'
+          = link_to 'Cancel', root_path, :class => 'btn btn-default'
+  .col-xs-2
