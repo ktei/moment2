@@ -19,9 +19,9 @@ FactoryGirl.define do
   sequence :caption do |n|
     "album-caption#{n}"
   end
-  #
-  #factory :photo do |photo|
-  #  photo.description "foobar desc"
-  #  photo.association :album
-  #end
+
+  factory :photo do |photo|
+    photo.description 'foobar desc'
+    photo.association :album
+  end
 end

@@ -1,12 +1,12 @@
 %ul.nav.nav-pills.nav-stacked.side-bar
-  %li{class: "#{'active' if params[:controller] == 'albums' and (params[:action] == 'index' or params[:action] == 'show')}"}
+  %li{class: "#{'active' if params[:controller] == 'albums' and params[:action].in?(['index', 'show', 'edit']) }"}
     = link_to 'Albums', library_path
     - if current_user.albums.any?
       %ul.nav
         - current_user.albums.select { |x| not x.new_record? }.each do |album|
           %li{class: "#{'active' if @album == album}"}
             = link_to album.caption, show_album_path(:id => album)
-  %li{class: "#{'active' if params[:controller] == 'albums' and params[:action] == 'new'}"}
+  %li{class: "#{'active' if params[:controller] == 'albums' and (params[:action] == 'new' or params[:action] == 'create')}"}
     = link_to 'Create album', new_album_path
   %li
     %a{href: '#'} Upload

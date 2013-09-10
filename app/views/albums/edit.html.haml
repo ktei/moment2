@@ -1,9 +1,9 @@
-%h1= "#{@album.caption}"
+%h1= "Edit #{@album.caption}"
 .row
   .col-xs-3
     = render 'shared/lib_nav'
   .col-xs-9
     %ol.breadcrumb
       %li= link_to 'Library', library_path
-      %li.active= @album.caption
-    = render 'albums/toolbar'
+      %li= link_to @album.caption, show_album_path(@album)
+      %li.active Edit

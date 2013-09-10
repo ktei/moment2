@@ -60,7 +60,7 @@ describe AlbumsController do
 
     describe "POST 'create'" do
       before(:each) do
-        @attr = {caption: 'album caption', description: 'album description'}
+        @attr = {caption: FactoryGirl.generate(:caption), description: 'album description'}
       end
       it 'should fail with empty caption' do
         post :create, :album => @attr.merge({caption: ''})
@@ -87,8 +87,18 @@ describe AlbumsController do
       end
 
       it 'should succeed with valid data' do
-
+        lambda do
+          post :create, :album => @attr
+        end.should change(Album, :count).by(1)
+        response.should redirect_to(library_path)
       end
+    end
+    
+    describe "PUT 'update'" do
+      before(:each) do
+        @attr = {caption: FactoryGirl.generate(:caption), description: 'album description'}
+      end
+
     end
   end
 end

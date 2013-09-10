@@ -6,7 +6,8 @@ Moment2::Application.routes.draw do
   root 'public#home'
   get 'library' => 'albums#index'
   get 'library/:id' => 'albums#show', :as => 'show_album'
-  resources :albums, :only => [:new, :create]
+  resources :albums, :only => [:new, :create, :edit, :update, :destroy]
+  resources :photos, :only => [:new, :create, :update, :destroy]
   get 'profile' => 'users#edit'
   match 'profile' => 'users#update', :via => [:put, :patch]
 

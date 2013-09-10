@@ -19,3 +19,4 @@ webrat.log
 /spec/fixtures/images
 /.idea
 /public/system
+.project

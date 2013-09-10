@@ -20,6 +20,26 @@ class AlbumsController < ApplicationController
       render 'albums/new'
     end
   end
+  
+  def edit
+    @album = Album.find(params[:id])
+    @title = "Edit #{@album.caption}"
+  end
+
+  def update
+    params.permit!
+    album = Album.find(params[:id])
+    if album.update_attributes(params[:album])
+      flash[:success] = 'Album has been successfully updated.'
+      redirect_to album
+    else
+      render 'albums/edit'
+    end
+  end
+
+  def destroy
+    
+  end
 
   private
     def user_params
